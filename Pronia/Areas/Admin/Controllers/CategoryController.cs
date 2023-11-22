@@ -5,6 +5,7 @@ using Pronia.Models;
 
 namespace Pronia.Areas.Admin.Controllers
 {
+    [Area("Admin")]
 
     public class CategoryController : Controller
     {
@@ -29,6 +30,11 @@ namespace Pronia.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Category category) 
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             _context.Categories.Add(category);
             _context.SaveChanges();
             return RedirectToAction("Index");

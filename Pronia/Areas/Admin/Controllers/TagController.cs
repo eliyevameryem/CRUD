@@ -4,7 +4,10 @@ using Pronia.DAL;
 using Pronia.Models;
 
 namespace Pronia.Areas.Admin.Controllers
+
 {
+    [Area("Admin")]
+
     public class TagController : Controller
     {
         AppDbContext _context;
@@ -28,6 +31,11 @@ namespace Pronia.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Tag tag)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             _context.Tags.Add(tag);
             _context.SaveChanges();
             return RedirectToAction("Index");

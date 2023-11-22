@@ -6,7 +6,7 @@
     <!-- Main Slider -->
     <div class="swiper-container main-slider swiper-arrow with-bg_white">
         <div class="swiper-wrapper">
-            @foreach(var item in Model.Products)
+            @foreach(var item in Model.Sliders)
             {
                 <div class="swiper-slide animation-style-01">
                     <div class="slide-inner style-1 bg-height"
@@ -15,8 +15,8 @@
                             <div class="row">
                                 <div class="col-lg-6 order-2 order-lg-1 align-self-center">
                                     <div class="slide-content text-black">
-                                        <span class="offer"></span>
-                                        <h2 class="title"></h2>
+                                        <span class="offer">@item.Title2</span>
+                                        <h2 class="title">@item.Title1</h2>
                                         <p class="short-desc">
                                             @item.Desc
                                         </p>
@@ -30,7 +30,7 @@
                                     <div class="inner-img">
                                         <div class="scene fill">
                                             <div class="expand-width" data-depth="0.2">
-                                                <img src="~/assets/images/website-images//item.ImageUrl"
+                                                <img src="~/assets/images/website-images//@item.ImageUrl"
                                                      alt="Inner Image" />
                                             </div>
                                         </div>
@@ -134,10 +134,10 @@
                                         <div class="product-img">
                                             <a href="shop.html">
                                                 <img class="primary-img"
-                                                     src="~/assets/images/website-images//@item.ProductImages.FirstOrDefault(i=>i.IsPrime==true)"
+                                                     src="~/assets/images/Pronia_Image//@item.ProductImages.FirstOrDefault(i=>i.IsPrime==true)?.ImageUrl"
                                                      alt="Product Images" />
                                                 <img class="secondary-img"
-                                                     src="~/assets/images/website-images//@item.ProductImages.FirstOrDefault(i=>i.IsPrime==false)"
+                                                     src="~/assets/images/website-images//@item.ProductImages.FirstOrDefault(i=>i.IsPrime==false)?.ImageUrl"
                                                      alt="Product Images" />
                                             </a>
                                             <div class="product-add-action">

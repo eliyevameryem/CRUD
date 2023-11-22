@@ -7329,70 +7329,6 @@
       "PackagePath": "staticwebassets\\admin\\vendor\\jquery\\jquery.slim.min.map"
     },
     {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\ProiaImage\\Kaktus.jpeg",
-      "PackagePath": "staticwebassets\\assets\\ProiaImage\\Kaktus.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\ProiaImage\\Papatya.jfif",
-      "PackagePath": "staticwebassets\\assets\\ProiaImage\\Papatya.jfif"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\ProiaImage\\QizilGul.jpg",
-      "PackagePath": "staticwebassets\\assets\\ProiaImage\\QizilGul.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\ProiaImage\\microsorium-pteropus-java-fern-1-kok-akvaryum-bitkisi-sert-yaprakli-597-P-2.jpg",
-      "PackagePath": "staticwebassets\\assets\\ProiaImage\\microsorium-pteropus-java-fern-1-kok-akvaryum-bitkisi-sert-yaprakli-597-P-2.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\0_org.webp",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\0_org.webp"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\0a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\0a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\Hygrophila-corymbosa-1.jpg",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\Hygrophila-corymbosa-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\Kaktus.jpeg",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\Kaktus.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\Qizilgul.webp",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\Qizilgul.webp"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\Qizilgul1.webp",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\Qizilgul1.webp"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\Qizilgul2.webp",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\Qizilgul2.webp"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\Qizilgulesas.jpg",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\Qizilgulesas.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\dekoratif-saksida-papatyalar.html",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\dekoratif-saksida-papatyalar.html"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\imgres.htm",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\imgres.htm"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\kaktus1.jpg",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\kaktus1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\Pronia Image\\kir-papatyasi-papatya-cicegi-siparisi.jpg",
-      "PackagePath": "staticwebassets\\assets\\Pronia Image\\kir-papatyasi-papatya-cicegi-siparisi.jpg"
-    },
-    {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\css\\Pe-icon-7-stroke.css",
       "PackagePath": "staticwebassets\\assets\\css\\Pe-icon-7-stroke.css"
     },
@@ -7475,6 +7411,54 @@
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\fonts\\fontawesome-webfont.woff2",
       "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\0_org.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\0_org.webp"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\0a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\0a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\Hygrophila-corymbosa-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\Hygrophila-corymbosa-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\Kaktus.jpeg",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\Kaktus.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\Qizilgul.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\Qizilgul.webp"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\Qizilgul1.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\Qizilgul1.webp"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\Qizilgul2.webp",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\Qizilgul2.webp"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\Qizilgulesas.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\Qizilgulesas.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\dekoratif-saksida-papatyalar.html",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\dekoratif-saksida-papatyalar.html"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\imgres.htm",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\imgres.htm"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\kaktus1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\kaktus1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\Pronia_Image\\kir-papatyasi-papatya-cicegi-siparisi.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Pronia_Image\\kir-papatyasi-papatya-cicegi-siparisi.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\about\\icon\\1.png",
@@ -8103,10 +8087,6 @@
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\vendor\\modernizr-3.11.2.min.js",
       "PackagePath": "staticwebassets\\assets\\js\\vendor\\modernizr-3.11.2.min.js"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\php\\pronia\\pronia.php",
-      "PackagePath": "staticwebassets\\assets\\php\\pronia\\pronia.php"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\scss\\_404.scss",

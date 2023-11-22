@@ -1,6 +1,4 @@
-﻿@using Pronia.Models;
-
-@model List<ShopinSection>
+﻿@model List<Tag>
 @{
     int count = 0;
 }
@@ -17,7 +15,8 @@
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Title</th>
+                <th scope="col">Name</th>
+                <th scope="col">Settings</th>
 
             </tr>
         </thead>
@@ -27,7 +26,8 @@
                 count++;
                 <tr>
                     <th scope="row">@count</th>
-                    <td>@item.Title</td>
+                    <td>@item.Name</td>
+
                     <td>
                         <a class="btn btn-primary" asp-controller="Category" asp-action="Update" asp-route-id=@item.Id>Update</a>
                         <a class="btn btn-danger" asp-controller="Category" asp-action="Delete" asp-route-id=@item.Id>Delete</a>
@@ -39,3 +39,4 @@
         </tbody>
     </table>
 </div>
+

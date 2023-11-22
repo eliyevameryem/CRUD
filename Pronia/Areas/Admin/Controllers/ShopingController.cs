@@ -5,6 +5,8 @@ using Pronia.Models;
 
 namespace Pronia.Areas.Admin.Controllers
 {
+    [Area("Admin")]
+
     public class ShopingController : Controller
     {
         AppDbContext _context;
@@ -28,6 +30,11 @@ namespace Pronia.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(ShopinSection shopinSection)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
             _context.ShopinSections.Add(shopinSection);
             _context.SaveChanges();
             return RedirectToAction("Index");

@@ -18,7 +18,7 @@ namespace Pronia.Controllers
         {
             HomeVM HomeVM = new HomeVM()
             {
-                Products = await _context.Products.Include(p => p.ProductImages).ToListAsync(),
+                Products = await _context.Products.Include(p => p.ProductImages).Take(2).ToListAsync(),
                 ShopinSections=await _context.ShopinSections.ToListAsync(),
                 Sliders = await _context.Sliders.ToListAsync()
 
