@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xWTJCtXT6e/3y1ysG3znIv6/LwzDgIl/Jr+sbopP9qg=",
+  "Hash": "59UIgGV4EgVuhDLKFxeGmspX8qF89d0ulDz5tQDbc7Y=",
   "Source": "Pronia",
   "BasePath": "_content/Pronia",
   "Mode": "Default",
@@ -34916,6 +34916,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\scss\\style.scss"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\SliderImageadc723f5-3c7b-4f6c-a9ad-d1f690f6e3890a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "UploadImage/SliderImageadc723f5-3c7b-4f6c-a9ad-d1f690f6e3890a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UploadImage\\SliderImageadc723f5-3c7b-4f6c-a9ad-d1f690f6e3890a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp"
     }
   ]
 }

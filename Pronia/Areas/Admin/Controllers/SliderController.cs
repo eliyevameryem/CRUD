@@ -44,11 +44,11 @@ namespace Pronia.Areas.Admin.Controllers
             //    return View();
             //}
 
-            if (slider.ImageFile.CheckFileLength(200))
-            {
-                ModelState.AddModelError("ImageFile", "Maksimum 2mb olcude sekil yukleye bilersiz");
-                return View();
-            }
+            //if (slider.ImageFile.CheckFileLength(200))
+            //{
+            //    ModelState.AddModelError("ImageFile", "Maksimum 2mb olcude sekil yukleye bilersiz");
+            //    return View();
+            //}
 
             
             string filname = slider.ImageFile.FileName;
@@ -74,6 +74,36 @@ namespace Pronia.Areas.Admin.Controllers
 
 
             return View();
+        }
+
+        public async Task<IActionResult> Update(int id)
+        {
+           
+            Slider dbSlider = await _context.Sliders.FirstOrDefaultAsync(x => x.id == id);
+
+            if (dbSlider == null)
+            {
+                return BadRequest();
+            }
+            return View(dbSlider);
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            Slider slider = await _context.Sliders.FirstOrDefaultAsync(x => x.id == id);
+
+            if (slider == null)
+            {
+                return NotFound();
+            }
+
+            slider.ImageUrl.DeleteFile(_env.WebRootPath, "uploads/slider");
+
+            _context.Sliders.Remove(slider);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+
         }
     }
 }

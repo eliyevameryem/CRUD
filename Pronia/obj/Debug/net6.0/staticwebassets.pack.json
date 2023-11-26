@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\SliderImageadc723f5-3c7b-4f6c-a9ad-d1f690f6e3890a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp",
+      "PackagePath": "staticwebassets\\UploadImage\\SliderImageadc723f5-3c7b-4f6c-a9ad-d1f690f6e3890a853d02-92ca-4c5e-aa5f-d0d64f6bf099.webp"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\admin\\css\\sb-admin-2.css",
       "PackagePath": "staticwebassets\\admin\\css\\sb-admin-2.css"
     },

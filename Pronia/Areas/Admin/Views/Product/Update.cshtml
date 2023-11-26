@@ -1,0 +1,45 @@
+﻿@model ProductCreateVM
+
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input class="form-control" asp-for="Name">
+            <span asp-validation-for="Name" style="color:red" ;></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="SKU" class="form-label">SKU</label>
+            <input class="form-control" asp-for="SKU">
+            <span asp-validation-for="SKU" style="color:red" ;></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Desc" class="form-label">Desc</label>
+            <input class="form-control" asp-for="Desc">
+            <span asp-validation-for="Desc" style="color:red" ;></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Price</label>
+            <input class="form-control" asp-for="Price">
+            <span asp-validation-for="Price" style="color:red" ;></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="CategoryId" class="form-label">Category</label>
+            <select class="form-control" asp-for="CategoryId">
+                @foreach (Category item in ViewBag.CategoryId)
+                {
+                    <option value="@item.Id">@item.Name</option>
+                }
+            </select>
+            <span asp-validation-for="CategoryId" style="color:red" ;></span>
+
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+
+
