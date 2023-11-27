@@ -20,7 +20,10 @@ namespace Pronia.Areas.Admin.Controllers
         public async Task<IActionResult> Index()
         {
             List<Product> products = await _context.Products
-                .Include(x => x.Category).ToListAsync();
+                .Include(x => x.Category)
+                .Include(pt=>pt.ProductTags).ThenInclude(t=>t.Tag)
+                .Include(ps=>ps.ProductSizes).ThenInclude(s=>s.Size)
+                .ToListAsync();
             return View(products);
         } 
         
@@ -39,23 +42,30 @@ namespace Pronia.Areas.Admin.Controllers
 
         public async Task<IActionResult> Create()
         {
-            ViewBag.CategoryId= await _context.Categories.ToListAsync();
-            return View();
+            ProductCreateVM productCreateVM = new ProductCreateVM();
+
+            productCreateVM.Categories = await _context.Categories.ToListAsync();
+            productCreateVM.Tags=await _context.Tags.ToListAsync();
+            productCreateVM.Sizes=await _context.Sizes.ToListAsync();
+            return View(productCreateVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Product product) 
+        public async Task<IActionResult> Create(ProductCreateVM productCreateVM, Product product) 
         {
-            ViewBag.CategoryId = await _context.Categories.ToListAsync();
+            productCreateVM.Categories = await _context.Categories.ToListAsync();
+            productCreateVM.Tags = await _context.Tags.ToListAsync();
+            productCreateVM.Sizes = await _context.Sizes.ToListAsync();
 
-            if (product==null) return NotFound();
+
+            if (productCreateVM == null) return NotFound();
 
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(productCreateVM);
             }
 
-            bool result = await _context.Products.AnyAsync(x => x.Id == product.CategoryId);
+            bool result = await _context.Products.AnyAsync(x => x.Id == productCreateVM.CategoryId);
             if(!result) 
             {
                 ModelState.AddModelError("CategoryId", "Duzgun kategori elave elemediniz");
@@ -63,16 +73,67 @@ namespace Pronia.Areas.Admin.Controllers
 
             Product newproduct = new Product() 
             {
-                Name= product.Name,
-                CategoryId= product.CategoryId,
-                SKU= product.SKU,
-                Price= product.Price,
-                Desc= product.Desc,
-                ProductImages=new List<ProductImage>()
+                Name= productCreateVM.Name,
+                CategoryId= productCreateVM.CategoryId,
+                SKU= productCreateVM.SKU,
+                Price= productCreateVM.Price,
+                Desc= productCreateVM.Desc,
+                ProductSizes=new List<ProductSize>(),
+                ProductTags=new List<ProductTag>()
             };
 
+            if(productCreateVM.SizesIds !=null)
+            {
+                foreach(var sizeId in productCreateVM.SizeIds)
+                {
+                    Size size = await _context.Sizes.FirstOrDefaultAsync(x => x.Id == sizeId);
+                    if(size==null)
+                    {
+                        ModelState.AddModelError("SizeIds", "Duzgun olcunu daxil elemediniz");
+                        productCreateVM.Categories = await _context.Categories.ToListAsync();
+                        productCreateVM.Tags = await _context.Tags.ToListAsync();
+                        productCreateVM.Sizes = await _context.Sizes.ToListAsync();
+                        return View(productCreateVM);
+                    }
+                    ProductSize productSize = new ProductSize()
+                    {
+                        SizeId = sizeId,
+                        Product = product
+                    };
 
-            await _context.Products.AddAsync(product);
+                    product.ProductSizes.Add(productSize);  
+
+
+                }
+            }
+
+            if (productCreateVM.TagIds != null)
+            {
+                foreach (var tagid in productCreateVM.TagIds)
+                {
+                    Tag tag = await _context.Tags.FirstOrDefaultAsync(x => x.Id == sizeId);
+                    if (tag == null)
+                    {
+                        ModelState.AddModelError("TagIds", "Duzgun tagi daxil elemediniz");
+                        productCreateVM.Categories = await _context.Categories.ToListAsync();
+                        productCreateVM.Tags = await _context.Tags.ToListAsync();
+                        productCreateVM.Sizes = await _context.Sizes.ToListAsync();
+                        return View(productCreateVM);
+                    }
+                    ProductTag productTag = new ProductTag()
+                    {
+                        Tagid = tagid,
+                        Product = product
+                    };
+
+                    product.ProductSizes.Add(productTag);
+
+
+                }
+            }
+
+
+            await _context.Products.AddAsync(newproduct);
             await _context.SaveChangesAsync();
            
             return RedirectToAction("Index");
@@ -80,47 +141,49 @@ namespace Pronia.Areas.Admin.Controllers
 
         public async Task<IActionResult> Update(int id) 
         {
-            ViewBag.CategoryId = await _context.Categories.ToListAsync();
+            UpdateProductVM productVM = new UpdateProductVM();
+            productVM.Categories = await _context.Categories.ToListAsync();
 
-            Product exist =await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
-            if (exist==null) return NotFound();
+            Product exist = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (exist == null) return NotFound();
 
             Product product = new Product()
             {
-                Name= exist.Name,
-                CategoryId= exist.CategoryId,
-                SKU= exist.SKU,
-                Price= exist.Price,
-                Desc= exist.Desc,
+                Name = exist.Name,
+                CategoryId = exist.CategoryId,
+                SKU = exist.SKU,
+                Price = exist.Price,
+                Desc = exist.Desc,
             };
 
-           return View(product);
+            return View(productVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(int id,Product product)
+        public async Task<IActionResult> Update(int id,UpdateProductVM productVM)
         {
-            ViewBag.CategoryId = await _context.Categories.ToListAsync();
+            productVM.Categories = await _context.Categories.ToListAsync();
 
             Product exist = await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (exist == null) return NotFound();
 
             if (!ModelState.IsValid)
             {
-                return View();
+                return View(productVM);
             }
 
-            bool result = await _context.Products.AnyAsync(x => x.Id == product.CategoryId);
+            bool result = await _context.Products.AnyAsync(x => x.Id == productVM.CategoryId);
             if (!result)
             {
                 ModelState.AddModelError("CategoryId", "Duzgun kategori elave elemediniz");
             }
 
-            exist.Name = product.Name;
-            exist.SKU = product.SKU;
-            exist.Price = product.Price;
-            exist.Desc = product.Desc;
-            exist.CategoryId = product.CategoryId;
+            exist.Name = productVM.Name;
+            exist.SKU = productVM.SKU;
+            exist.Price = productVM.Price;
+            exist.Desc = productVM.Desc;
+            exist.CategoryId = productVM.CategoryId;
+           
 
             await _context.SaveChangesAsync();
 

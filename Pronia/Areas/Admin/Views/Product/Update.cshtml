@@ -28,7 +28,7 @@
         <div class="mb-3">
             <label asp-for="CategoryId" class="form-label">Category</label>
             <select class="form-control" asp-for="CategoryId">
-                @foreach (Category item in ViewBag.CategoryId)
+                @foreach (Category item in ProductCreateVM.Categories)
                 {
                     <option value="@item.Id">@item.Name</option>
                 }
