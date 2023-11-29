@@ -25,15 +25,38 @@
             <span asp-validation-for="Price" style="color:red" ;></span>
 
         </div>
+    <div class="mb-3">
+        <label asp-for="CategoryId" class="form-label">Category</label>
+        <select class="form-select" asp-for=CategoryId asp-items="new SelectList(Model.Categories,nameof(Category.Id),nameof(Category.Name))">
+        </select>
+        <span asp-validation-for="CategoryId" style="color:red" ;></span>
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="TagIds" class="form-label">Tag</label>
+        <select class="form-select" asp-for=TagIds asp-items="new SelectList(Model.Tags,nameof(Tag.Id),nameof(Tag.Name))">
+        </select>
+        <span asp-validation-for="CategoryId" style="color:red" ;></span>
+
+    </div>
+
+    <div class="row">
         <div class="mb-3">
-            <label asp-for="CategoryId" class="form-label">Category</label>
-            <select class="form-control" asp-for="CategoryId">
-                @foreach (Category item in ProductCreateVM.Categories)
-                {
-                    <option value="@item.Id">@item.Name</option>
-                }
-            </select>
-            <span asp-validation-for="CategoryId" style="color:red" ;></span>
+            <label asp-for="MainPhoto" class="form-label">MainPhoto</label>
+            <input class="form-control" asp-for="MainPhoto">
+            <span asp-validation-for="MainPhoto" style="color:red" ;></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="HoverPhoto" class="form-label">HoverPhoto</label>
+            <input class="form-control" asp-for="HoverPhoto">
+            <span asp-validation-for="HoverPhoto" style="color:red" ;></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Photo" class="form-label">Photo</label>
+            <input class="form-control" asp-for="Photo">
+            <span asp-validation-for="Photo" style="color:red" ;></span>
 
         </div>
 

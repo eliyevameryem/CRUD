@@ -4,27 +4,27 @@ namespace Pronia.Utilities
 {
     public static class FileExtension
     {
-        //public static bool CheckFileType(this IFormFile ImageFile, string type)
-        //{
-        //    //return ImageFile.Contenttype(type);
-        //}
-        //public static bool CheckFileLength(this IFormFile ImageFile, int length)
-        //{
-        //    return ImageFile.Length > length;
-        //}
-        //public static string UploadFile(this IFormFile file, string envPath, string folderName)
-        //{
-        //    string filename = Guid.NewGuid().ToString() + file.FileName;
+        public static bool CheckFileType(this IFormFile ImageFile, string type)
+        {
+            return ImageFile.ContentType.Contains(type);
+        }
+        public static bool CheckFileLength(this IFormFile ImageFile, int length)
+        {
+            return ImageFile.Length < length ;
+        }
+        public static string UploadFile(this IFormFile file, string envPath, string folderName)
+        {
+            string filename = Guid.NewGuid().ToString() + file.FileName;
 
-        //    string path = Path.Combine(root, folder, filename);
+            string path = envPath+ folderName+ filename;
 
-        //    using (FileStream stream = new FileStream(path, FileMode.Create))
-        //    {
-        //        file.CopyTo(stream);
-        //    }
+            using (FileStream stream = new FileStream(path, FileMode.Create))
+            {
+                file.CopyTo(stream);
+            }
 
-        //    return filename;
-        //}
+            return filename;
+        }
 
         public static void DeleteFile(this string image, string root, string folder)
         {

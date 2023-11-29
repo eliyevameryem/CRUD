@@ -15,18 +15,13 @@
         <thead>
             <tr>
                 <th scope="col">No</th>
-
+                <th scope="col">ProductImage</th>
                 <th scope="col">Name</th>
                 <th scope="col">SKU</th>
+                <th scope="col">Price</th>
                 <th scope="col">Category</th>
-
                 <th scope="col">Desc</th>
-
-
-
-
-
-
+                <th scope="col">Tag</th>
 
             </tr>
         </thead>
@@ -35,13 +30,26 @@
             {
                 count++;
                 <tr>
-                    <th scope="row">@count</th>
+                    <td scope="row">@count</td>
+                    <td>
+                        <img src="~/UploadImage/Product/@item.ProductImages.FirstOrDefault(x=>x.IsPrime==true)">
+                    </td>
                     <td>@item.Name</td>
                     <td>@item.SKU</td>
                     <td>@item.Price</td>
 
-                    <td>@item.Category</td>
+                    <td>@item.Category.Name</td>
                     <td>@item.Desc</td>
+
+                    <td>
+
+                   @foreach (var tag in item.ProductTags)
+                    {
+                        <td>@tag.Tag.Name</td>
+                    }
+               
+                    </td>
+
 
                     
                     <td>
