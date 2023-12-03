@@ -1,8 +1,9 @@
-﻿namespace Pronia.Models
+﻿using Pronia.Models.Entity;
+
+namespace Pronia.Models
 {
-    public class Tag
+    public class Tag:BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public List<ProductTag> ProductTags { get; set; }
 

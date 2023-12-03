@@ -38,19 +38,19 @@ namespace Pronia.Areas.Admin.Controllers
                 return View();
             }
 
-            //if (!slider.ImageFile.CheckFileType("image/"))
-            //{
-            //    ModelState.AddModelError("ImageUrel", "File duzgun daxil elemediniz");
-            //    return View();
-            //}
+            if (!slider.ImageFile.CheckFileType("image/"))
+            {
+                ModelState.AddModelError("ImageUrel", "File duzgun daxil elemediniz");
+                return View();
+            }
 
-            //if (slider.ImageFile.CheckFileLength(200))
-            //{
-            //    ModelState.AddModelError("ImageFile", "Maksimum 2mb olcude sekil yukleye bilersiz");
-            //    return View();
-            //}
+            if (slider.ImageFile.CheckFileLength(200))
+            {
+                ModelState.AddModelError("ImageFile", "Maksimum 2mb olcude sekil yukleye bilersiz");
+                return View();
+            }
 
-            
+
             string filname = slider.ImageFile.FileName;
 
             filname = Guid.NewGuid().ToString()+filname;
@@ -79,7 +79,7 @@ namespace Pronia.Areas.Admin.Controllers
         public async Task<IActionResult> Update(int id)
         {
            
-            Slider dbSlider = await _context.Sliders.FirstOrDefaultAsync(x => x.id == id);
+            Slider dbSlider = await _context.Sliders.FirstOrDefaultAsync(x => x.Id == id);
 
             if (dbSlider == null)
             {
@@ -90,7 +90,7 @@ namespace Pronia.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(int id)
         {
-            Slider slider = await _context.Sliders.FirstOrDefaultAsync(x => x.id == id);
+            Slider slider = await _context.Sliders.FirstOrDefaultAsync(x => x.Id == id);
 
             if (slider == null)
             {

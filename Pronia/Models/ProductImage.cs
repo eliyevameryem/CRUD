@@ -1,8 +1,9 @@
-﻿namespace Pronia.Models
+﻿using Pronia.Models.Entity;
+
+namespace Pronia.Models
 {
-    public class ProductImage
+    public class ProductImage:BaseEntity
     {
-        public int Id { get; set; }
         public bool? IsPrime { get; set; }
         public string ImageUrl { get; set; }
         public int ProductId { get; set; }

@@ -181,13 +181,13 @@ namespace Pronia.Areas.Admin.Controllers
                 {
                     continue;
                 }
-                //ProductImage photo = new ProductImage()
-                //{
-                //    IsPrime = null,
-                //    Product = newproduct,
-                //    ImageUrl = productCreateVM.imgFile.UploadFile(_env.WebRootPath, @"\UploadImage\Product\")
-                //};
-                //newproduct.ProductImages.Add(imgFile);
+                ProductImage photo = new ProductImage()
+                {
+                    IsPrime = null,
+                    Product = newproduct,
+                    ImageUrl = imgFile.UploadFile(_env.WebRootPath, @"\UploadImage\Product\")
+                };
+                newproduct.ProductImages.Add(photo);
             }
 
             newproduct.ProductImages.Add(mainphoto);
@@ -227,13 +227,13 @@ namespace Pronia.Areas.Admin.Controllers
 
             };
 
-            foreach (var item in exist.ProductImagesVM)
+            foreach (var item in exist.ProductImages)
             {
                 ProductImageVM productImageVM = new ProductImageVM()
                 {
                     Id = item.Id,
                     IsPrime = item.IsPrime,
-                    ImgUrl = item.ImgUrl,
+                    ImgUrl = item.ImageUrl,
 
                 };
                 updateproductVM.ProductImagesVM.Add(productImageVM);
@@ -327,11 +327,12 @@ namespace Pronia.Areas.Admin.Controllers
                     return View(updateproductVM);
                 }
                 var existMainPhoto = exist.ProductImages.FirstOrDefault(p => p.IsPrime == true);
-                existMainPhoto.ImageUrl.Remove(existMainPhoto);
+                existMainPhoto.ImageUrl.DeleteFile(_env.WebRootPath, @"\UploadImage\Product\");
+                exist.ProductImages.Remove(existMainPhoto);
                 ProductImage image = new ProductImage()
                 {
                     ImageUrl = updateproductVM.MainPhoto.UploadFile(_env.WebRootPath, @"\Upload\Product"),
-                    Product = exist.Id,
+                    ProductId = exist.Id,
                     IsPrime = true
                 };
                 exist.ProductImages.Add(image);
@@ -349,11 +350,12 @@ namespace Pronia.Areas.Admin.Controllers
                     return View(updateproductVM);
                 }
                 var existHoverPhoto = exist.ProductImages.FirstOrDefault(p => p.IsPrime == false);
-                existHoverPhoto.ImageUrl.Remove(existHoverPhoto);
+                existHoverPhoto.ImageUrl.DeleteFile(_env.WebRootPath,@"\UploadImage\Product");
+                exist.ProductImages.Remove(existHoverPhoto);
                 ProductImage image = new ProductImage()
                 {
                     ImageUrl = updateproductVM.HoverPhoto.UploadFile(_env.WebRootPath, @"\Upload\Product"),
-                    Product = exist.Id,
+                    ProductId = exist.Id,
                     IsPrime = false
                 };
                 exist.ProductImages.Add(image);

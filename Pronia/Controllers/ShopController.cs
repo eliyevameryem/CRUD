@@ -36,20 +36,20 @@ namespace Pronia.Controllers
             return View(detailVM);
             
 
+        Product currentProduct = await _db.Products.Include(c => c.Category).Include(p => p.ProductSizes).ThenInclude(ps => ps.Size).FirstOrDefaultAsync(p => p.Id == id);
+        RelatedProduct = await _db.Products
+            .Include(x=>x.ProductTags).ThenInclude(x=>x.Tag)
+            .Include(x=>x.Category)
+            .Where(x=>x.CategoryId==currentProduct.CategoryId && x.Id!= currentProduct.Id).ToListAsync();
+
+        if(currentProduct==null)
+        {
+            return NotFound();
+    }
+        return View(currentProduct);
         }
 
-        //Product currentProduct=await _db.Products.Include(c=>c.Category).Include(p=>p.ProductSizes).ThenInclude(ps=>ps.Size).FirstOrDefaultAsync(p=>p.Id==id);
-        //RelatedProduct = await _db.Products
-        //    .Include(x=>x.ProductTags).ThenInclude(x=>x.Tag)
-        //    .Include(x=>x.Category)
-        //    .Where(x=>x.CategoryId==currentProduct.CategoryId && x.Id!=currentProduct.Id).ToListAsync();
-
-        //if(currentProduct==null)
-        //{
-        //    return NotFound();
-        //}
-        //return View(currentProduct);
-    }
+}
 }
 
 

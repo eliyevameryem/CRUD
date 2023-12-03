@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Pronia.Models.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Pronia.Models
 {
-    public class Slider
+    public class Slider : BaseEntity
     {
-        public int id { get; set; }
         public string Desc { get; set; }
         public string Title1 { get; set; }
         public string Title2 { get; set; }

@@ -1,0 +1,15 @@
+﻿@using Pronia.Models;
+@model Setting
+<div class="container">
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Key" class="form-label">Key </label>
+            <input type="text" asp-for="Key" placeholder class="Key" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Value" class="form-label">Value </label>
+            <input type="text" asp-for="Value" placeholder class="Value" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

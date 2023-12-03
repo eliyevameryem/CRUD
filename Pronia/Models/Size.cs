@@ -1,8 +1,9 @@
-﻿namespace Pronia.Models
+﻿using Pronia.Models.Entity;
+
+namespace Pronia.Models
 {
-    public class Size
+    public class Size:BaseEntity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public List<ProductSize> ProductSizes { get; set; }
 
