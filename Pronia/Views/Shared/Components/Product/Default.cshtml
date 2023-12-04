@@ -1,8 +1,8 @@
-﻿@* @using Pronia.Models;
+﻿@using Pronia.Models;
 @model List<Product>
 
 <div class="product-item-wrap row">
-    @foreach (Product item in Model.Products)
+    @foreach (Product item in Model)
     {
         <div class="col-xl-3 col-md-4 col-sm-6">
             <div class="product-item">
@@ -42,7 +42,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="cart.html"
+                                <a asp-action="AddBasket" asp-controller="Shop" asp-route-id=@item.Id
                                    data-tippy="Add to cart"
                                    data-tippy-inertia="true"
                                    data-tippy-animation="shift-away"
@@ -75,4 +75,3 @@
     }
 
 </div>
- *@
