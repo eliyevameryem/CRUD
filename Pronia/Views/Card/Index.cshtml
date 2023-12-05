@@ -1,5 +1,7 @@
 ﻿@model List<BasketitemVM>
-
+@{
+    double Total = 0;
+}
 
 <main class="main-content">
     <div class="breadcrumb-area breadcrumb-height"
@@ -42,7 +44,7 @@
                                     {
                                         <tr>
                                             <td class="product_remove">
-                                                <a href="#">
+                                                <a class="product-item_remove" asp-controller="Card" asp-action="RemoveBasket" asp-route-id="@item.Id">
                                                     <i class="pe-7s-close"
                                                        data-tippy="Remove"
                                                        data-tippy-inertia="true"
@@ -54,7 +56,7 @@
                                             </td>
                                             <td class="product-thumbnail">
                                                 <a href="#">
-                                                    <img src="~/UploadImage/Product/@item.ImgUrl"
+                                                    <img src="~/assets/images/Pronia_Image/@item.ImgUrl"
                                                          alt="Cart Thumbnail" />
                                                 </a>
                                             </td>
@@ -115,8 +117,8 @@
                                 <div class="cart-page-total">
                                     <h2>Cart totals</h2>
                                     <ul>
-                                        <li>Subtotal <span>$79.35</span></li>
-                                        <li>Total <span>$79.35</span></li>
+                                        
+                                        <li>Total <span>$@Total</span></li>
                                     </ul>
                                     <a href="#">Proceed to checkout</a>
                                 </div>

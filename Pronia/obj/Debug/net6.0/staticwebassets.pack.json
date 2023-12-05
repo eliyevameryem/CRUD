@@ -45,8 +45,20 @@
       "PackagePath": "staticwebassets\\UploadImage\\Product\\dcbec9a6-9800-469f-99aa-c4511165cc87Hygrophila-corymbosa-1.jpg"
     },
     {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\edfc2021-5ea6-4094-9623-17c8505b6456Qizilgul.webp",
+      "PackagePath": "staticwebassets\\UploadImage\\Product\\edfc2021-5ea6-4094-9623-17c8505b6456Qizilgul.webp"
+    },
+    {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\eece4ae5-f50d-4aca-9f9b-570377a00ac11-1-570x633.jpg",
       "PackagePath": "staticwebassets\\UploadImage\\Product\\eece4ae5-f50d-4aca-9f9b-570377a00ac11-1-570x633.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\f2fefb40-6f26-40e6-addc-6d3841ffb06bGarden_roses_(yellow-red).jpg",
+      "PackagePath": "staticwebassets\\UploadImage\\Product\\f2fefb40-6f26-40e6-addc-6d3841ffb06bGarden_roses_(yellow-red).jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\f332472d-32e7-4af1-83b0-274a977102500_org.webp",
+      "PackagePath": "staticwebassets\\UploadImage\\Product\\f332472d-32e7-4af1-83b0-274a977102500_org.webp"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\f683887b-8d34-4157-a6c8-ae90087c64861-2-120x120.webp",
@@ -87,6 +99,10 @@
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\admin\\img\\undraw_rocket.svg",
       "PackagePath": "staticwebassets\\admin\\img\\undraw_rocket.svg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\admin\\js\\custom.js",
+      "PackagePath": "staticwebassets\\admin\\js\\custom.js"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\admin\\js\\demo\\chart-area-demo.js",
@@ -8079,6 +8095,10 @@
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\images\\website-images\\service.png",
       "PackagePath": "staticwebassets\\assets\\images\\website-images\\service.png"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\custom.cs",
+      "PackagePath": "staticwebassets\\assets\\js\\custom.cs"
     },
     {
       "Id": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\main.js",

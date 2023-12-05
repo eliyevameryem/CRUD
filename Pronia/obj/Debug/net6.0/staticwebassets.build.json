@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HF0wLY4jvme/X5JDZXex9APO3fbp0YHnOtj9WW9QqMs=",
+  "Hash": "VsAm38nB3z6ZJLn8byZrxR7Dh2rE5S43I0ilRNHGJzU=",
   "Source": "Pronia",
   "BasePath": "_content/Pronia",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\img\\undraw_rocket.svg"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\admin\\js\\custom.js",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "admin/js/custom.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\js\\custom.js"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\admin\\js\\demo\\chart-area-demo.js",
@@ -34119,6 +34136,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\website-images\\service.png"
     },
     {
+      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\custom.cs",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "assets/js/custom.cs",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom.cs"
+    },
+    {
       "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\main.js",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
@@ -35105,6 +35139,23 @@
       "OriginalItemSpec": "wwwroot\\UploadImage\\Product\\dcbec9a6-9800-469f-99aa-c4511165cc87Hygrophila-corymbosa-1.jpg"
     },
     {
+      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\edfc2021-5ea6-4094-9623-17c8505b6456Qizilgul.webp",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "UploadImage/Product/edfc2021-5ea6-4094-9623-17c8505b6456Qizilgul.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UploadImage\\Product\\edfc2021-5ea6-4094-9623-17c8505b6456Qizilgul.webp"
+    },
+    {
       "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\eece4ae5-f50d-4aca-9f9b-570377a00ac11-1-570x633.jpg",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
@@ -35120,6 +35171,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\UploadImage\\Product\\eece4ae5-f50d-4aca-9f9b-570377a00ac11-1-570x633.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\f2fefb40-6f26-40e6-addc-6d3841ffb06bGarden_roses_(yellow-red).jpg",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "UploadImage/Product/f2fefb40-6f26-40e6-addc-6d3841ffb06bGarden_roses_(yellow-red).jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UploadImage\\Product\\f2fefb40-6f26-40e6-addc-6d3841ffb06bGarden_roses_(yellow-red).jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\f332472d-32e7-4af1-83b0-274a977102500_org.webp",
+      "SourceId": "Pronia",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\",
+      "BasePath": "_content/Pronia",
+      "RelativePath": "UploadImage/Product/f332472d-32e7-4af1-83b0-274a977102500_org.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\UploadImage\\Product\\f332472d-32e7-4af1-83b0-274a977102500_org.webp"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\UploadImage\\Product\\f683887b-8d34-4157-a6c8-ae90087c64861-2-120x120.webp",

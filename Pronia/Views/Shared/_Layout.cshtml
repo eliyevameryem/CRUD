@@ -954,7 +954,7 @@
                   @foreach (var item in basketitemVM)
                             {
                                 <li class="minicart-product">
-                                    <a class="product-item_remove" href="#">
+                                    <a class="product-item_remove" asp-controller="Card" asp-action="RemoveBasket" asp-route-id="@item.Id">
                                         <i class="pe-7s-close"
                                            data-tippy="Remove"
                                            data-tippy-inertia="true"
@@ -1408,6 +1408,8 @@
     <script src="~/assets/js/plugins/ion.rangeSlider.min.js"></script>
     <script src="~/assets/js/plugins/mailchimp-ajax.js"></script>
     <script src="~/assets/js/plugins/jquery.counterup.js"></script>
+    <script src="~/assets/js/plugins/jquery.counterup.js"></script>
+
 
     <!--Main JS (Common Activation Codes)-->
     <script src="~/assets/js/main.js"></script>

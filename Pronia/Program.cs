@@ -13,11 +13,10 @@ namespace Pronia
             builder.Services.AddDbContext<AppDbContext>(opt=>
             
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-            builder.Services.AddSingleton<IHttpContextAccessor, IHttpContextAccessor>();    
             
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();    
             builder.Services.AddScoped<LayoutService>();
-
-
+            
 
             var app = builder.Build();
 

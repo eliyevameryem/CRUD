@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 using Pronia.DAL;
 using Pronia.Models;
 using Pronia.ViewsModels;
-using static System.Net.WebRequestMethods;
+
 
 namespace Pronia.Service
 {

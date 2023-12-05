@@ -8,7 +8,7 @@
             {
                 <div class="swiper-slide product-item">
                     <div class="product-img">
-                        <a asp-action="Detail" asp-controller="Shop" asp-route-id="@item.Id">
+                        <a asp-action="Detail" asp-controller="Shop" asp-route-id="@item.Id" class="single-btn add-basket-button">
                             <img class="primary-img"
                                  src="~/UploadImage/Product/@item.ProductImages.FirstOrDefault(x=>x.IsPrime==true)?.ImageUrl"
                                  alt="Product Images" />
@@ -43,7 +43,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="cart.html"
+                                    <a asp-action="AddBasket" asp-controller="Card" asp-route-id="@item.Id" class="single-btn add-basket-button"
                                        data-tippy="Add to cart"
                                        data-tippy-inertia="true"
                                        data-tippy-animation="shift-away"

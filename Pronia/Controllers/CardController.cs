@@ -5,6 +5,7 @@ using Pronia.DAL;
 using Pronia.Models;
 using Pronia.ViewsModels;
 
+
 namespace Pronia.Controllers
 {
     public class CardController : Controller
@@ -18,7 +19,7 @@ namespace Pronia.Controllers
 
         public IActionResult Index()
         {
-            if (Request.Cookies["Basket"]!=null)
+            if (Request.Cookies["Basket"] != null)
             {
 
 
@@ -49,11 +50,11 @@ namespace Pronia.Controllers
 
         public IActionResult AddBasket(int id)
         {
-            var product=_context.Products.FirstOrDefault(p => p.Id == id);
+            var product = _context.Products.FirstOrDefault(p => p.Id == id);
             if (product == null) return NotFound();
 
             List<BasketCookieVM> basket;
-            if (Request.Cookies["Basket"]==null)
+            if (Request.Cookies["Basket"] == null)
             {
                 BasketCookieVM basketCookieVMs = new BasketCookieVM()
                 {
@@ -61,13 +62,13 @@ namespace Pronia.Controllers
                     Count = 1
                 };
                 basket = new List<BasketCookieVM>();
-                    basket.Add(basketCookieVMs);
+                basket.Add(basketCookieVMs);
             }
             else
             {
                 basket = JsonConvert.DeserializeObject<List<BasketCookieVM>>(Request.Cookies["Basket"]);
-                var existBasket= basket.FirstOrDefault(x=>x.Id==id);
-                if (existBasket!=null)
+                var existBasket = basket.FirstOrDefault(x => x.Id == id);
+                if (existBasket != null)
                 {
                     existBasket.Count += 1;
                 }
@@ -85,19 +86,66 @@ namespace Pronia.Controllers
 
             BasketCookieVM basketCookieVM = new BasketCookieVM()
             {
-                Id=id,
-                    Count=1
+                Id = id,
+                Count = 1
             };
-            var json=JsonConvert.SerializeObject(basketCookieVM);
+            var json = JsonConvert.SerializeObject(basket);
             Response.Cookies.Append("Basket", json);
-            return RedirectToAction(nameof(Index),"Home");               
+
+
+
+
+            List<BasketitemVM> basketitemVMs = new List<BasketitemVM>();
+
+            foreach (var item in basket)
+            {
+                Product newproduct = _context.Products.Include(p => p.ProductImages.Where(pi => pi.IsPrime == true)).FirstOrDefault(p => p.Id == item.Id);
+
+                if (newproduct == null)
+                {
+
+                    continue;
+                }
+
+                //basket.Add(new BasketitemVM()
+                //{
+                //    Id = item.Id,
+                //    Name = newproduct.Name,
+                //    Price = newproduct.Price,
+                //    ImgUrl = newproduct.ProductImages.FirstOrDefault().ImageUrl,
+                //    Count = item.Count
+                //});
+            }
+            return RedirectToAction(nameof(Index), "Home");
         }
 
         public IActionResult GetBasket()
         {
             var cookie = Request.Cookies["Basket"];
-            
+
             return Content(cookie);
         }
+
+        public IActionResult RemoveBasket(int id)
+        {
+            string json = Request.Cookies["Basket"];
+            if (json != null)
+            {
+                List<BasketCookieVM> basketCookieVMs = JsonConvert.DeserializeObject<List<BasketCookieVM>>(json);
+                BasketCookieVM product = basketCookieVMs.FirstOrDefault(x => x.Id == id);
+                if (product != null)
+                {
+                    basketCookieVMs.Remove(product);
+                }
+
+                Response.Cookies.Append("Basket", JsonConvert.SerializeObject(basketCookieVMs));
+            }
+
+            return RedirectToAction(nameof(Index), "Home");
+
+        }
+
+       
     }
 }
+
