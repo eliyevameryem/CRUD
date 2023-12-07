@@ -6,7 +6,7 @@ namespace Pronia.Models
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string IsRemained { get; set; }
+        public bool IsRemained { get; set; }
 
     }
 }

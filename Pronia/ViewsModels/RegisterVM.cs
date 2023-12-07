@@ -23,6 +23,7 @@ namespace Pronia.ViewsModels
         [Required]
         [DataType(DataType.Password)] 
         public string ConfirmPassword { get; set; }
+        public bool IsRemained {  get; set; }   
 
 
     }

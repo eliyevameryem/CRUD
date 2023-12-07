@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Pronia.DAL;
@@ -8,6 +9,7 @@ using Pronia.ViewsModels;
 
 namespace Pronia.Controllers
 {
+    [Authorize]
     public class CardController : Controller
     {
         AppDbContext _context;

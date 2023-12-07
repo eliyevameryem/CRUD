@@ -154,18 +154,26 @@
                         </button>
                         <ul
                           class="dropdown-menu"
-                          aria-labelledby="settingButton"
-                        >
-                          <li>
-                            <a class="dropdown-item" href="my-account.html"
-                              >My account</a
-                            >
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="login-register.html"
-                              >Login | Register</a
-                            >
-                          </li>
+                          aria-labelledby="settingButton">
+
+                                                @if (User.Identity.IsAuthenticated)
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item" href="my-account.html">@User.Identity.Name</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Login"  asp-route-ReturnUrl="@Context.Request.Path">Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="dropdown-item" asp-controller="Account" asp-action="Register" asp-route-ReturnUrl="@Context.Request.Path">Register</a>
+                                                </li>
+                                                }
                         </ul>
                       </li>
                       <li class="d-none d-lg-block">
