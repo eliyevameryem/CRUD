@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VsAm38nB3z6ZJLn8byZrxR7Dh2rE5S43I0ilRNHGJzU=",
+  "Hash": "WeELktcA+DO/mnbEuhlgkTeLDNubjVKDs8O9cWeLNPQ=",
   "Source": "Pronia",
   "BasePath": "_content/Pronia",
   "Mode": "Default",
@@ -34136,12 +34136,12 @@
       "OriginalItemSpec": "wwwroot\\assets\\images\\website-images\\service.png"
     },
     {
-      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\custom.cs",
+      "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\custom.js",
       "SourceId": "Pronia",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\",
       "BasePath": "_content/Pronia",
-      "RelativePath": "assets/js/custom.cs",
+      "RelativePath": "assets/js/custom.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -34150,7 +34150,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\js\\custom.cs"
+      "OriginalItemSpec": "wwwroot\\assets\\js\\custom.js"
     },
     {
       "Identity": "C:\\Users\\Asus\\Desktop\\thome\\Pronia\\wwwroot\\assets\\js\\main.js",
