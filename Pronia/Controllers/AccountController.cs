@@ -17,8 +17,8 @@ namespace Pronia.Controllers
         public AccountController(UserManager<AppUser> userManager,SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
-            _signInManager=signInManager;
-             _roleManager = roleManager;
+            _signInManager =signInManager;
+            _roleManager = roleManager;
         }
 
         public IActionResult Register()
@@ -84,8 +84,8 @@ namespace Pronia.Controllers
                 ModelState.AddModelError("", "Username ve ya Password duzgun deyl");
                 return View();
 
-                await _signInManager.SignInAsync(existuser, loginVM.RememberMe);
             }
+                await _signInManager.SignInAsync(existuser, loginVM.RememberMe);
             if(ReturnUrl!=null)
             {
                 return Redirect(ReturnUrl);
