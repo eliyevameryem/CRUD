@@ -3,7 +3,7 @@
 @inject LayoutService layout
 @{
     Dictionary<string, string> setting = await layout.GetSettings();
-    List<BasketitemVM> basketitemVM = layout.GetBasket();
+    List<BasketitemVM> basketitemVM = await layout.GetBasket();
 }
 
 
@@ -162,6 +162,9 @@
                                                         <a class="dropdown-item" href="my-account.html">@User.Identity.Name</a>
                                                     </li>
                                                     <li>
+                                                        <a class="dropdown-item" asp-action="MyAccount" asp-controller="Account">My Account</a>
+                                                    </li>
+                                                    <li>
                                                         <a class="dropdown-item" asp-controller="Account" asp-action="Logout">Logout</a>
                                                     </li>
                                                 }
@@ -184,7 +187,7 @@
                       <li class="minicart-wrap me-3 me-lg-0">
                         <a href="#miniCart" class="minicart-btn toolbar-btn">
                           <i class="pe-7s-shopbag"></i>
-                          <span class="quantity">3</span>
+                                                <span class="quantity">@basketitemVM.Count</span>
                         </a>
                       </li>
                       <li class="mobile-menu_wrap d-block d-lg-none">

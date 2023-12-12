@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using Pronia.DAL;
 using Pronia.Models;
 using Pronia.ViewsModels;
-using Microsoft.AspNet.Identity;
+
 
 
 namespace Pronia.Service
@@ -14,9 +13,9 @@ namespace Pronia.Service
     {
         AppDbContext _context;
         private readonly IHttpContextAccessor _http;
-        private readonly UserManager<AppUser> _userManager;
+        UserManager<AppUser> _userManager;
 
-        public LayoutService(AppDbContext context, IHttpContextAccessor http,UserManager<AppUser> userManager)
+        public LayoutService(AppDbContext context, IHttpContextAccessor http, UserManager<AppUser> userManager)
         {
             _context = context;
             _http = http;
@@ -37,7 +36,7 @@ namespace Pronia.Service
 
             if (_http.HttpContext.User.Identity.IsAuthenticated)
             {
-                AppUser user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.IsAuthenticated);
+                AppUser user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
 
                 List<BasketItem> userBasket = await _context.BasketItems
                     .Include(p => p.Product).ThenInclude(x => x.ProductImages).ToListAsync();

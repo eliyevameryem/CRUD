@@ -249,8 +249,8 @@ namespace Pronia.Migrations
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -299,11 +299,26 @@ namespace Pronia.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("CreateData")
+                    b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool?>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -584,7 +599,7 @@ namespace Pronia.Migrations
                         .IsRequired();
 
                     b.HasOne("Pronia.Models.Order", "Order")
-                        .WithMany()
+                        .WithMany("BasketItems")
                         .HasForeignKey("OrderId");
 
                     b.HasOne("Pronia.Models.Product", "Product")
@@ -676,6 +691,11 @@ namespace Pronia.Migrations
                     b.Navigation("BasketItems");
 
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Pronia.Models.Order", b =>
+                {
+                    b.Navigation("BasketItems");
                 });
 
             modelBuilder.Entity("Pronia.Models.Product", b =>

@@ -5,7 +5,7 @@ using Pronia.Models;
 
 namespace Pronia.ViewComponents
 {
-    public class ProductViewComponent:ViewComponent
+    public class ProductViewComponent : ViewComponent
     {
         AppDbContext _context;
 
@@ -15,7 +15,7 @@ namespace Pronia.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            List<Product> products =await _context.Products.Include(x=>x.ProductImages).Take(4).ToListAsync();
+            List<Product> products = await _context.Products.Include(x => x.ProductImages).Take(4).ToListAsync();
             return View(products);
         }
     }

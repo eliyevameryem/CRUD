@@ -46,7 +46,6 @@ namespace Pronia.Controllers
                     });
                 }
             }
-
             else
             {
                 List<BasketCookieVM> basketCookies = new List<BasketCookieVM>();
@@ -72,12 +71,14 @@ namespace Pronia.Controllers
                             Count = item.Count
                         });
                     }
-                    return View(basketItems);
                 }
             }
+
+            return View(basketItems);
+
         }
 
-            public async Task<IActionResult> AddBasket(int id)
+        public async Task<IActionResult> AddBasket(int id)
             {
                 var product = _context.Products.FirstOrDefault(p => p.Id == id);
                 if (product == null) return NotFound();

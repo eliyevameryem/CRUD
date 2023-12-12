@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Pronia.DAL;
 using Pronia.Models;
 using Pronia.Utilities;
 using Pronia.ViewsModels;
@@ -10,12 +13,14 @@ namespace Pronia.Controllers
     [AutoValidateAntiforgeryToken]
     public class AccountController : Controller
     {
+        private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<AppUser> userManager,SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(AppDbContext context,UserManager<AppUser> userManager,SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
+            _context = context;
             _userManager = userManager;
             _signInManager =signInManager;
             _roleManager = roleManager;
@@ -112,5 +117,31 @@ namespace Pronia.Controllers
             }
             return View();
         }
+
+        [Authorize]
+        public async Task<IActionResult> MyAccount()
+        {
+            AppUser user=await _userManager.FindByNameAsync(User.Identity.Name);
+            if(user==null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            //List<Order> userOrders= await _context.Orders.Where(o=>o.AppuserId==user.Id).ToListAsync();
+
+            List<Order> userOrders = await _context.Orders
+            .Where(o => o.AppuserId == user.Id)
+            .Include(o => o.BasketItems) 
+            .ToListAsync();
+
+            MyAccountVM accountVM = new MyAccountVM()
+            {
+                Orders=userOrders,
+            };
+
+            return View(accountVM);
+        }
+
+
     }
 }
