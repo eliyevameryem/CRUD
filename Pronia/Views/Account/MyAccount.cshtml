@@ -1,9 +1,6 @@
 ﻿
 @model MyAccountVM
-@{
-    
-    var orderStatus = x.OrderStatus;
-}
+
 
 <main class="main-content">
     <div class="breadcrumb-area breadcrumb-height"
@@ -115,25 +112,25 @@
                                             {
                                                 <tr>
                                                     <td>
-                                                        <a class="account-order-id" href="#">#@(item.Id.ToString().Substring(0,5))</a>
+                                                        <a class="account-order-id" href="#">#@item.Id</a>
                                                     </td>
                                                     <td>@item.CreateDate.ToString()</td>
                                                     <td>
-                                                        @if (item.Status == orderStatus.Pedding)
+                                                        @if (item.Status == Pronia.Utilities.OrderStatus.Pedding)
                                                         {
                                                             <p>Gözləmədə</p>
                                                         }
-                                                        else if (item.Status == orderStatus.Accepted)
+                                                        else if (item.Status == Pronia.Utilities.OrderStatus.Accepted)
                                                         {
                                                             <p>Yoldadır</p>
                                                         }
-                                                        else if (item.Status == orderStatus.Rejected)
+                                                        else if (item.Status == Pronia.Utilities.OrderStatus.Rejected)
                                                         {
                                                             <p>Çatdırıldı</p>
                                                         }
                                                     </td>
 
-                                                    <td>@item.TotalPrice for @item.BasketItems.Count items</td>
+                                                    <td>$@item.TotalPrice for @item.BasketItems.Count() items</td>
                                                     <td>
                                                         <a href="#" class="btn btn-dark"><span>View</span></a>
                                                     </td>

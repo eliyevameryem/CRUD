@@ -135,7 +135,7 @@ namespace Pronia.Areas.Admin.Controllers
                         Product = newproduct
                     };
 
-                    //newproduct.ProductSizes.Add(productCreateVM);
+                    newproduct.ProductTags.Add(productTag);
 
 
                 }
@@ -240,6 +240,7 @@ namespace Pronia.Areas.Admin.Controllers
                 };
                 updateproductVM.ProductImagesVM.Add(productImageVM);
             }
+
             return View(updateproductVM);
         }
 

@@ -127,8 +127,6 @@ namespace Pronia.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            //List<Order> userOrders= await _context.Orders.Where(o=>o.AppuserId==user.Id).ToListAsync();
-
             List<Order> userOrders = await _context.Orders
             .Where(o => o.AppuserId == user.Id)
             .Include(o => o.BasketItems) 

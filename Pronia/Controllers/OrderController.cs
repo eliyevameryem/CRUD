@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Pronia.DAL;
 using Pronia.Models;
+using Pronia.Service;
 using Pronia.ViewsModels;
 
 namespace Pronia.Controllers
@@ -13,11 +14,13 @@ namespace Pronia.Controllers
         AppDbContext _context;
 
         UserManager<AppUser> _userManager;
+        private readonly EmailService _emailService;
 
-        public OrderController(AppDbContext context, UserManager<AppUser> userManager)
+        public OrderController(AppDbContext context, UserManager<AppUser> userManager, EmailService emailService)
         {
             _context = context;
             _userManager = userManager;
+           _emailService = emailService;
         }
         [Authorize]
         public async Task<IActionResult> Checkout()
@@ -54,7 +57,12 @@ namespace Pronia.Controllers
                 AppUser = user,
                 CreateDate = DateTime.Now,
                 TotalPrice = TotalPrice,
+                Email = orderVM.Email,
+                Name = orderVM.Name,
+                Surname = orderVM.Surname,
             };
+
+            _emailService.SendEmail("aliyevmeryem15@gmail.com", "Order", "Sifarisiniz tesdiqlendi");
 
             await _context.Orders.AddAsync(order);
             await _context.SaveChangesAsync();

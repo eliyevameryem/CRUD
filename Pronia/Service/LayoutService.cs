@@ -4,8 +4,7 @@ using Newtonsoft.Json;
 using Pronia.DAL;
 using Pronia.Models;
 using Pronia.ViewsModels;
-
-
+using System.Security.Claims;
 
 namespace Pronia.Service
 {
@@ -36,15 +35,16 @@ namespace Pronia.Service
 
             if (_http.HttpContext.User.Identity.IsAuthenticated)
             {
-                AppUser user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
+                AppUser user = await _userManager.Users
+                    .Include(x=>x.BasketItems.Where(y=>y.OrderId==null))
+                    .FirstOrDefaultAsync(x=>x.Id==_http.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier));
+               
 
-                List<BasketItem> userBasket = await _context.BasketItems
-                    .Include(p => p.Product).ThenInclude(x => x.ProductImages).ToListAsync();
-
-                foreach (var item in userBasket)
+                foreach (var item in user.BasketItems)
                 {
                     basket.Add(new BasketitemVM()
                     {
+                        Id = item.ProductId,
                         Price = item.Price,
                         Count = item.Count,
                         ImgUrl = item.Product.ProductImages.FirstOrDefault().ImageUrl,

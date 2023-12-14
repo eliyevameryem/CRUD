@@ -31,7 +31,7 @@
         <div class="mb-3">
             <label asp-for="CategoryId" class="form-label">Category</label>
             <select class="form-select" asp-for=CategoryId asp-items="new SelectList(Model.Categories,nameof(Category.Id),nameof(Category.Name))">
-                
+                <option selected value="0" disabled>Choose Category</option>
             </select>
             <span asp-validation-for="CategoryId" style="color:red" ;></span>
 

@@ -31,7 +31,8 @@ namespace Pronia
             
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();    
             builder.Services.AddScoped<LayoutService>();
-            
+            builder.Services.AddTransient<EmailService>();
+
 
             var app = builder.Build();
 
